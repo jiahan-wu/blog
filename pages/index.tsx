@@ -1,18 +1,25 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { GetStaticProps, NextPage } from 'next';
+import * as fs from 'fs';
+import * as path from 'path';
+import ReactMarkdown from 'react-markdown';
 
-const Home: NextPage = () => {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Jia-Han Wu' Blog</title>
-        <meta name="description" content="Jia-Han Wu' Blog" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-    </div>
-  )
+interface HomeProps {
+  markdown: string;
 }
 
-export default Home
+const Home: NextPage<HomeProps> = ({ markdown }) => {
+  return <ReactMarkdown children={markdown} />
+};
+
+export const getStaticProps: GetStaticProps<HomeProps> =
+  async () => {
+    const readmeFilePath = path.join(process.cwd(), "README.md")
+    const markdown = fs.readFileSync(readmeFilePath, { encoding: 'utf-8' })
+    return {
+      props: {
+        markdown,
+      },
+    };
+  };
+
+export default Home;
