@@ -8,7 +8,9 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ markdown }) => {
-  return <ReactMarkdown children={markdown} />
+  return (
+    <ReactMarkdown>#hello world ##S1 ##S2</ReactMarkdown>
+  )
 };
 
 export const getStaticProps: GetStaticProps<HomeProps> =
