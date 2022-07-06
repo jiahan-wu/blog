@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/commonmark': ^0.27.5
   '@types/node': 18.0.0
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
@@ -21,6 +22,7 @@ dependencies:
   react-markdown: 8.0.3_luyos4mouogwq6z3wafb3re4ce
 
 devDependencies:
+  '@types/commonmark': 0.27.5
   '@types/node': 18.0.0
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
@@ -234,6 +236,10 @@ packages:
     dependencies:
       tslib: 2.4.0
     dev: false
+
+  /@types/commonmark/0.27.5:
+    resolution: {integrity: sha512-vIqgmHyLsc8Or3EWLz6QkhI8/v61FNeH0yxRupA7VqSbA2eFMoHHJAhZSHudplAV89wqg1CKSmShE016ziRXuw==}
+    dev: true
 
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
